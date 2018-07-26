@@ -7,6 +7,7 @@ import {ProductListService} from '../product-list.service'
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.css']
   //esto ya no
+
 })
 export class ProductPageComponent implements OnInit {
   produtos: Array<any>

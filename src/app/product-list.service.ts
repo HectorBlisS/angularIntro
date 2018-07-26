@@ -45,5 +45,17 @@ export class ProductListService {
   getOneProduct(id){
     return this.produtos.find(p=>p._id == id)
   }
+
+  updateProduct(product){
+    return new Promise((resolve, reject)=>{
+      this.produtos = this.produtos.map(p=>{
+        if(p._id == product._id) return product
+        return p
+      }) //map
+      return resolve(this.produtos)
+    })
+
+
+  }
   
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 import {ProductListService} from '../product-list.service'
+import {SwapiService} from '../services/swapi.service'
+import {PhoneService} from '../services/phones.service'
 
 @Component({
   selector: 'app-product-page',
@@ -11,9 +13,13 @@ import {ProductListService} from '../product-list.service'
 })
 export class ProductPageComponent implements OnInit {
   produtos: Array<any>
+  characters: Array<any>
+  phones: Array<any>
   constructor(
       private router: Router,
-      private service: ProductListService
+      private service: ProductListService,
+      private swapi: SwapiService,
+      private phoneService: PhoneService
     ){}
 
   
@@ -23,7 +29,11 @@ export class ProductPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.produtos = this.service.getList()
+    this.phoneService.getAllPhones()
+    .then(phones=>{
+      this.phones = phones
+    })
+
   }
 
 

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import { RouterModule } from "@angular/router";
+import {HttpModule} from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -13,6 +14,7 @@ import {routes} from './routes'
 //services
 import {ProductListService} from './product-list.service';
 import { EditProductComponent } from './edit-product/edit-product.component'
+import {PhoneService} from './services/phones.service'
 
 
 
@@ -28,9 +30,10 @@ import { EditProductComponent } from './edit-product/edit-product.component'
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpModule
   ],
-  providers: [ProductListService],
+  providers: [ProductListService, PhoneService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

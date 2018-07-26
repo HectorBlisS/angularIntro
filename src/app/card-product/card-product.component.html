@@ -2,13 +2,13 @@
 [queryParams]="{size:'XL', color:'red', discount:'20%'}"
 [routerLink]="['/detail', produto._id]">
 <div>
-  <img width="50" src="{{produto.pic || 'http://shfcs.org/en/wp-content/uploads/2015/11/MedRes_Product-presentation-2.jpg'}}" alt="">
+  <img width="100" src="{{produto.image || 'http://shfcs.org/en/wp-content/uploads/2015/11/MedRes_Product-presentation-2.jpg'}}" alt="">
   <h2>{{produto.name}}</h2>
   <p>
-    {{produto.desc}}
+    {{produto.brand}}
   </p>
-  <button (click)="onAddCart()">
-    {{produto.price | currency:"MXN"}}
+  <button *ngFor="let spec of produto.specs" (click)="onAddCart()">
+    {{spec}}
   </button>
 </div>
 </a>

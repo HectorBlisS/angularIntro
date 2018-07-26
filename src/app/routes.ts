@@ -4,13 +4,24 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { DetailComponent } from './detail/detail.component';
 import {EditProductComponent} from './edit-product/edit-product.component'
+import { NewProductComponent } from './new-product/new-product.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',  component: AppComponent },
     { 
       path:'products', 
-      component: ProductPageComponent 
+      component: ProductPageComponent,
+      children:[
+        {
+          path: 'new',
+          component: NewProductComponent
+        }
+      ]
+    },
+    {
+      path: 'new',
+      component: NewProductComponent
     },
     {
       path: 'signup',

@@ -14,7 +14,8 @@ import {routes} from './routes'
 //services
 import {ProductListService} from './product-list.service';
 import { EditProductComponent } from './edit-product/edit-product.component'
-import {PhoneService} from './services/phones.service'
+import {PhoneService} from './services/phones.service';
+import { NewProductComponent } from './new-product/new-product.component'
 
 
 
@@ -25,7 +26,8 @@ import {PhoneService} from './services/phones.service'
     ProductPageComponent,
     CardProductComponent,
     DetailComponent,
-    EditProductComponent
+    EditProductComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,

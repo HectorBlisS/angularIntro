@@ -36,4 +36,11 @@ export class EditProductComponent implements OnInit {
     
   }
 
+  removePhone(id){
+    this.phoneService.deletePhone(id)
+    .subscribe(()=>{
+      this.router.navigate(['products'])
+    })
+  }
+
 }

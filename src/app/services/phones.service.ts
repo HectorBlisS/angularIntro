@@ -32,7 +32,6 @@ export class PhoneService{
     editOnePhone(obj){
     return this.http.put(this.url + obj._id, obj) 
         .pipe(map((res: Response)=>res.json()))    
-
     }    
 
     //delete one phone richard

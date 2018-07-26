@@ -1,0 +1,14 @@
+<a 
+[queryParams]="{size:'XL', color:'red', discount:'20%'}"
+[routerLink]="['/detail', produto._id]">
+<div>
+  <img width="50" src="{{produto.pic || 'http://shfcs.org/en/wp-content/uploads/2015/11/MedRes_Product-presentation-2.jpg'}}" alt="">
+  <h2>{{produto.name}}</h2>
+  <p>
+    {{produto.desc}}
+  </p>
+  <button (click)="onAddCart()">
+    {{produto.price | currency:"MXN"}}
+  </button>
+</div>
+</a>

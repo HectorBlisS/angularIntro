@@ -1,0 +1,20 @@
+<h1>{{form | json}}</h1>
+<section>
+
+  <form #lupeForm="ngForm" (ngSubmit)="recibiendoElForm(lupeForm)" >
+    <input required name="username" [(ngModel)]="username" placeholder="Tu nombre papud!" type="text">
+    <br>
+    <input required name="email" [(ngModel)]="correo" placeholder="Tu correo" type="email">
+    <br>
+    <input #myPassword="ngModel" required name="password" [(ngModel)]="password" placeholder="Tu password" type="password">
+    <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
+      <p style="background:red;color:white" [hidden]="!myPassword.errors.required">
+        Password is required
+      </p>
+    </div>
+    <br>
+    <input required name="password2" [(ngModel)]="password2" placeholder="repite" type="password">
+    <input type="submit">
+  </form>
+
+</section>

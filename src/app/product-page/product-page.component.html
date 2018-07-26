@@ -1,0 +1,14 @@
+<nav>
+  <h1>Titulo del e-commerce</h1>
+</nav>
+
+
+<section>
+
+  <h2>Produtos</h2>
+
+  <ul>
+    <app-card-product (addCart)="showProduct($event)" *ngFor="let p of produtos" [produto]="p" ></app-card-product>
+  </ul>
+
+</section>

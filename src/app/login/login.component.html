@@ -1,0 +1,25 @@
+<h1 *ngIf="user">Hola {{user.username}}</h1>
+
+<section >
+  <div *ngIf="isLogged">
+        <h2>Inicia sesión</h2>
+        <input placeholder="email" [(ngModel)]="auth.email" type="text">
+        <br>
+        <input placeholder="tu password" [(ngModel)]="auth.password"  type="password">
+        <button (click)="login()" >Entrar</button>
+        <p>No tienes cuenta? <span (click)="login=!login" >Click aquí</span></p>
+      </div>
+      
+      <div *ngIf="!isLogged">
+        <h2>Registrate</h2>
+        <input [(ngModel)]="auth.username" placeholder="username" type="text">
+        <input placeholder="email" [(ngModel)]="auth.email" type="text">
+        <br>
+        <input placeholder="tu password" [(ngModel)]="auth.password"  type="password">
+        <button (click)="signup()" >Registrarme</button>
+        <p>Ya tienes cuenta? <span (click)="login=!login" >Click aquí</span></p>
+      </div>
+
+     
+      
+</section>

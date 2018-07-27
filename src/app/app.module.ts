@@ -12,10 +12,14 @@ import { DetailComponent } from './detail/detail.component';
 //routes
 import {routes} from './routes'
 //services
+import {AuthService} from './services/auth.service'
 import {ProductListService} from './product-list.service';
 import { EditProductComponent } from './edit-product/edit-product.component'
 import {PhoneService} from './services/phones.service';
-import { NewProductComponent } from './new-product/new-product.component'
+import { NewProductComponent } from './new-product/new-product.component';
+import { LoginComponent } from './login/login.component';
+import { PrivateComponent } from './private/private.component'
+
 
 
 
@@ -27,7 +31,9 @@ import { NewProductComponent } from './new-product/new-product.component'
     CardProductComponent,
     DetailComponent,
     EditProductComponent,
-    NewProductComponent
+    NewProductComponent,
+    LoginComponent,
+    PrivateComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,11 @@ import { NewProductComponent } from './new-product/new-product.component'
     RouterModule.forRoot(routes),
     HttpModule
   ],
-  providers: [ProductListService, PhoneService],
+  providers: [
+    ProductListService, 
+    PhoneService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

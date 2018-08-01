@@ -7,7 +7,8 @@ import {map} from 'rxjs/operators'
     providedIn: 'root'
 })
 export class PhoneService{
-    url = "http://localhost:3000/phones/"
+    //url = "http://localhost:3000/phones/"
+    url = '/phones/'
     constructor(private http:Http){}
 
     //get all phones

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service'
+import {FirebaseService} from '../services/firebase.service'
 import {Router} from '@angular/router'
 
 @Component({
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private firebaseService: FirebaseService
   ) { }
 
   signup(){
@@ -31,6 +33,14 @@ export class LoginComponent implements OnInit {
       this.user = user
       localStorage.setItem('user', JSON.stringify(user))
     })
+  }
+
+  loginWithFacebook(){
+    this.firebaseService.loginWithFacebook()
+  }
+
+  loginWithGoogle(){
+    this.firebaseService.loginWithGoogle()
   }
 
   ngOnInit() {

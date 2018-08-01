@@ -20,6 +20,11 @@ import { NewProductComponent } from './new-product/new-product.component';
 import { LoginComponent } from './login/login.component';
 import { PrivateComponent } from './private/private.component'
 
+//material design
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon'
+
 
 
 
@@ -39,7 +44,15 @@ import { PrivateComponent } from './private/private.component'
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule
+  ],
+  exports:[
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [
     ProductListService, 

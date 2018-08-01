@@ -29,6 +29,14 @@ export class ProductPageComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    //saco al user del localstorage
+    const user = JSON.parse(localStorage.getItem('user'))
+    if(user.role !== "ADMIN"){
+      this.router.navigate(['/'])
+    }
+
+
     this.phoneService.getAllPhones()
     .then(phones=>{
       this.phones = phones

@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup-form.component.css']
 })
 export class SignupFormComponent implements OnInit {
-
+  username = ""
+  correo = ""
+  password = ""
+  password2 = ""
 
   recibiendoElForm(form){
     console.log(form.value)

@@ -1,14 +1,17 @@
+<button mat-icon-button color="warn">
+    <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+  </button>
 <div>
   <h2>Agrega el produto</h2>
-    <input [(ngModel)]="produto.name" type="text">
+    <input placeholder="name" [(ngModel)]="produto.name" type="text">
     <br>
-    <input [(ngModel)]="produto.brand" type="text">
+    <input placeholder="brand" [(ngModel)]="produto.brand" type="text">
     <br>
-    <input [(ngModel)]="produto.image" type="text">
+    <input (change)="getFile($event)" type="file">
     <br>
     <input placeholder="separa lo con comas" [(ngModel)]="produto.specs" type="text">
     <br>
-    <button (click)="saveProduto(produto)">Guardar los cambios</button>
+    <button (click)="saveProduto()">Guardar los cambios</button>
   </div>
   
   

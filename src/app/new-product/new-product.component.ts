@@ -10,6 +10,7 @@ import {Router} from '@angular/router'
 export class NewProductComponent implements OnInit {
 
   produto: any = {}
+  file: any
 
   constructor(
     private phoneService: PhoneService,
@@ -18,10 +19,21 @@ export class NewProductComponent implements OnInit {
 
   saveProduto(){
     this.produto.specs = this.produto.specs.split(',')
-    this.phoneService.createPhone(this.produto)
+
+    const form = new FormData()
+    for(let k in this.produto){
+      form.append(k, this.produto[k])
+    }
+    form.append('image', this.file)
+
+    this.phoneService.createPhone(form)
     .subscribe(p=>{
       this.router.navigate(['products'])
     })
+  }
+
+  getFile(e){
+    this.file = e.target.files[0]
   }
 
   ngOnInit() {

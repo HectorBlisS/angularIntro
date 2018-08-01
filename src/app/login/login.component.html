@@ -7,6 +7,12 @@
         <br>
         <input placeholder="tu password" [(ngModel)]="auth.password"  type="password">
         <button (click)="login()" >Entrar</button>
+        <h2>
+          Entra con Facebook <button (click)="loginWithFacebook()" >Facebook Login</button>
+        </h2>
+        <h2>
+          Entra con Google <button (click)="loginWithGoogle()" >Facebook Login</button>
+        </h2>
         <p>No tienes cuenta? <span (click)="login=!login" >Click aquí</span></p>
       </div>
       
